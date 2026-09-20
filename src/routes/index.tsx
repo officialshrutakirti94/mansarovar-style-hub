@@ -9,15 +9,15 @@ import {
   Play,
 } from "lucide-react";
 
-import storeAsset from "@/assets/mansarovar-storefront-2026.jpg.asset.json";
-import logoAsset from "@/assets/mansarovar-logo.png.asset.json";
-import ladiesTealAsset from "@/assets/ladies-teal-festive.jpeg.asset.json";
-import ladiesOrangeAsset from "@/assets/ladies-orange-saree.jpeg.asset.json";
-import menBlueAsset from "@/assets/men-blue-ethnic.jpeg.asset.json";
-import menShirtsAsset from "@/assets/men-shirt-collection.jpeg.asset.json";
-import menFestiveAsset from "@/assets/men-festive-storefront.jpeg.asset.json";
-import kidsGreenAsset from "@/assets/kids-green-festive.jpeg.asset.json";
-import kidsBlackAsset from "@/assets/kids-black-party.jpeg.asset.json";
+const storeImage = "/images/storefront.jpeg";
+const logoImage = "/favicon.png";
+const ladiesTealImage = "/images/ladies-teal.jpeg";
+const ladiesOrangeImage = "/images/ladies-orange.jpeg";
+const menBlueImage = "/images/men-blue.jpeg";
+const menFabricsImage = "/images/men-fabrics.jpeg";
+const menFestiveImage = "/images/men-festive.jpeg";
+const kidsGreenImage = "/images/kids-green.jpeg";
+const kidsBlackImage = "/images/kids-black.jpeg";
 
 const socialLinks = [
   {
@@ -44,8 +44,8 @@ const catalogGroups = [
     note: "Grace for every occasion",
     description: "Rich colours, fluid silhouettes and intricate details made for celebrations and everything around them.",
     items: [
-      { name: "Festive Co-ords", note: "Occasion wear", image: ladiesTealAsset.url, alt: "Woman wearing a teal embroidered festive co-ord set in the Mansarovar store" },
-      { name: "Draped Elegance", note: "Contemporary sarees", image: ladiesOrangeAsset.url, alt: "Woman wearing an orange draped saree in the Mansarovar store" },
+      { name: "Festive Co-ords", note: "Occasion wear", image: ladiesTealImage, alt: "Woman wearing a teal embroidered festive co-ord set in the Mansarovar store" },
+      { name: "Draped Elegance", note: "Contemporary sarees", image: ladiesOrangeImage, alt: "Woman wearing an orange draped saree in the Mansarovar store" },
     ],
   },
   {
@@ -54,9 +54,9 @@ const catalogGroups = [
     note: "Classics, cut with confidence",
     description: "From refined everyday staples to distinguished festive looks, find a wardrobe that feels unmistakably yours.",
     items: [
-      { name: "Regal Kurta Sets", note: "Festive edit", image: menBlueAsset.url, alt: "Man wearing a blue kurta and patterned Nehru jacket in the Mansarovar store" },
-      { name: "Fabrics", note: "All type fabrics", image: menShirtsAsset.url, alt: "Colourful stacks of fabrics at Mansarovar" },
-      { name: "Celebration Ready", note: "Signature looks", image: menFestiveAsset.url, alt: "Man wearing a blue festive kurta outside the illuminated Mansarovar storefront" },
+      { name: "Regal Kurta Sets", note: "Festive edit", image: menBlueImage, alt: "Man wearing a blue kurta and patterned Nehru jacket in the Mansarovar store" },
+      { name: "Fabrics", note: "All type fabrics", image: menFabricsImage, alt: "Colourful stacks of fabrics at Mansarovar" },
+      { name: "Celebration Ready", note: "Signature looks", image: menFestiveImage, alt: "Man wearing a blue festive kurta outside the illuminated Mansarovar storefront" },
     ],
   },
   {
@@ -65,8 +65,8 @@ const catalogGroups = [
     note: "Little looks, big personality",
     description: "Playful, comfortable and celebration-ready styles for boys and girls—made for their brightest moments.",
     items: [
-      { name: "Festive Charm", note: "Girls’ ethnic wear", image: kidsGreenAsset.url, alt: "Young girl wearing a green embroidered festive outfit in the Mansarovar store" },
-      { name: "Party Sparkle", note: "Girls’ occasion wear", image: kidsBlackAsset.url, alt: "Young girl wearing an elegant black party outfit in the Mansarovar store" },
+      { name: "Festive Charm", note: "Girls’ ethnic wear", image: kidsGreenImage, alt: "Young girl wearing a green embroidered festive outfit in the Mansarovar store" },
+      { name: "Party Sparkle", note: "Girls’ occasion wear", image: kidsBlackImage, alt: "Young girl wearing an elegant black party outfit in the Mansarovar store" },
     ],
   },
 ];
@@ -117,7 +117,7 @@ function Index() {
     <main className="overflow-hidden bg-background text-foreground">
       <header className="site-header">
         <a href="#top" className="brand-link" aria-label="Mansarovar Readymade home">
-          <img src={logoAsset.url} alt="Mansarovar Readymade" className="brand-logo" />
+          <img src={logoImage} alt="Mansarovar Readymade" className="brand-logo" />
           <span className="hidden sm:block">Mansarovar Readymade</span>
         </a>
         <nav aria-label="Main navigation" className="header-nav">
@@ -149,7 +149,7 @@ function Index() {
           <div className="arch-shadow" aria-hidden="true" />
           <figure className="hero-arch">
             <img
-              src={storeAsset.url}
+              src={storeImage}
               alt="The illuminated Mansarovar Readymade storefront in Raniganj"
               className="hero-image"
               width={886}
@@ -223,6 +223,15 @@ function Index() {
             Visit our store <ArrowUpRight aria-hidden="true" />
           </a>
         </div>
+        <figure className="about-photo">
+          <img
+            src={storeImage}
+            alt="The illuminated Mansarovar Readymade storefront in Raniganj at night"
+            loading="lazy"
+            width={886}
+            height={710}
+          />
+        </figure>
       </section>
 
       <section id="contact" className="contact-section" aria-labelledby="contact-title">
@@ -251,7 +260,7 @@ function Index() {
 
       <footer className="site-footer">
         <div className="footer-brand">
-          <img src={logoAsset.url} alt="Mansarovar Readymade" />
+          <img src={logoImage} alt="Mansarovar Readymade" />
           <p>Style for every story.</p>
         </div>
         <nav aria-label="Footer navigation">

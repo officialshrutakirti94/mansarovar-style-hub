@@ -77,15 +77,9 @@ yt-https://youtube.com/@_mansarovar_raniganj?si=Pe7ghLqBIiDx5SXO
 
 facebook-https://www.facebook.com/share/1D5SYnpHpP/
 
-This project was built with [Lovable](https://lovable.dev).
 
-## Build with Lovable
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/65f144bc-7a80-4d3b-b281-581652aa6495).
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
