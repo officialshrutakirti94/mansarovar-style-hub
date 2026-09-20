@@ -11,9 +11,13 @@ import {
 
 import storeAsset from "@/assets/mansarovar-storefront-2026.jpg.asset.json";
 import logoAsset from "@/assets/mansarovar-logo.png.asset.json";
-import mensCollection from "@/assets/mens-collection.jpg";
-import ladiesCollection from "@/assets/ladies-collection.jpg";
-import kidsCollection from "@/assets/kids-collection.jpg";
+import ladiesTealAsset from "@/assets/ladies-teal-festive.jpeg.asset.json";
+import ladiesOrangeAsset from "@/assets/ladies-orange-saree.jpeg.asset.json";
+import menBlueAsset from "@/assets/men-blue-ethnic.jpeg.asset.json";
+import menShirtsAsset from "@/assets/men-shirt-collection.jpeg.asset.json";
+import menFestiveAsset from "@/assets/men-festive-storefront.jpeg.asset.json";
+import kidsGreenAsset from "@/assets/kids-green-festive.jpeg.asset.json";
+import kidsBlackAsset from "@/assets/kids-black-party.jpeg.asset.json";
 
 const socialLinks = [
   {
@@ -33,24 +37,37 @@ const socialLinks = [
   },
 ];
 
-const collections = [
+const catalogGroups = [
   {
-    name: "Men’s Wear",
-    note: "Sharp tailoring · Everyday ease",
-    image: mensCollection,
-    alt: "Man wearing a tailored charcoal suit",
+    name: "Ladies",
+    number: "01",
+    note: "Grace for every occasion",
+    description: "Rich colours, fluid silhouettes and intricate details made for celebrations and everything around them.",
+    items: [
+      { name: "Festive Co-ords", note: "Occasion wear", image: ladiesTealAsset.url, alt: "Woman wearing a teal embroidered festive co-ord set in the Mansarovar store" },
+      { name: "Draped Elegance", note: "Contemporary sarees", image: ladiesOrangeAsset.url, alt: "Woman wearing an orange draped saree in the Mansarovar store" },
+    ],
   },
   {
-    name: "Ladies’ Wear",
-    note: "Elegant classics · Modern silhouettes",
-    image: ladiesCollection,
-    alt: "Woman wearing an elegant red saree",
+    name: "Men",
+    number: "02",
+    note: "Classics, cut with confidence",
+    description: "From refined everyday staples to distinguished festive looks, find a wardrobe that feels unmistakably yours.",
+    items: [
+      { name: "Regal Kurta Sets", note: "Festive edit", image: menBlueAsset.url, alt: "Man wearing a blue kurta and patterned Nehru jacket in the Mansarovar store" },
+      { name: "Everyday Formals", note: "Shirts & trousers", image: menShirtsAsset.url, alt: "Colourful stacks of Monte Carlo shirts at Mansarovar" },
+      { name: "Celebration Ready", note: "Signature looks", image: menFestiveAsset.url, alt: "Man wearing a blue festive kurta outside the illuminated Mansarovar storefront" },
+    ],
   },
   {
-    name: "Kids’ Wear",
-    note: "Boys · Girls",
-    image: kidsCollection,
-    alt: "Boy and girl wearing festive outfits",
+    name: "Kids",
+    number: "03",
+    note: "Little looks, big personality",
+    description: "Playful, comfortable and celebration-ready styles for boys and girls—made for their brightest moments.",
+    items: [
+      { name: "Festive Charm", note: "Girls’ ethnic wear", image: kidsGreenAsset.url, alt: "Young girl wearing a green embroidered festive outfit in the Mansarovar store" },
+      { name: "Party Sparkle", note: "Girls’ occasion wear", image: kidsBlackAsset.url, alt: "Young girl wearing an elegant black party outfit in the Mansarovar store" },
+    ],
   },
 ];
 
@@ -151,32 +168,39 @@ function Index() {
       <section id="collections" className="collections-section" aria-labelledby="collections-title">
         <div className="section-heading">
           <div>
-            <p className="eyebrow text-primary">Curated for your story</p>
-            <h2 id="collections-title">Find your fit.</h2>
+            <p className="eyebrow text-primary">The Mansarovar catalog</p>
+            <h2 id="collections-title">Made for every you.</h2>
           </div>
-          <p>From everyday favourites to celebration-ready looks, discover style for every generation.</p>
+          <p>A closer look at our latest styles for ladies, men and kids—photographed right here at Mansarovar.</p>
         </div>
 
-        <div className="collection-grid">
-          {collections.map((collection, index) => (
-            <article className="collection-card" key={collection.name}>
-              <img
-                src={collection.image}
-                alt={collection.alt}
-                loading="lazy"
-                width={1024}
-                height={1280}
-              />
-              <div className="collection-overlay" />
-              <span className="collection-number">0{index + 1}</span>
-              <div className="collection-copy">
-                <p>{collection.note}</p>
-                <h3>{collection.name}</h3>
-                <span className="collection-link" aria-hidden="true">
-                  Discover <ArrowUpRight />
-                </span>
+        <nav className="catalog-jump" aria-label="Catalog categories">
+          {catalogGroups.map((group) => <a key={group.name} href={`#catalog-${group.name.toLowerCase()}`}>{group.name}</a>)}
+        </nav>
+
+        <div className="catalog-groups">
+          {catalogGroups.map((group) => (
+            <section className={`catalog-group catalog-${group.name.toLowerCase()}`} id={`catalog-${group.name.toLowerCase()}`} key={group.name} aria-labelledby={`catalog-${group.name.toLowerCase()}-title`}>
+              <header className="catalog-group-heading">
+                <span>{group.number}</span>
+                <div>
+                  <p>{group.note}</p>
+                  <h3 id={`catalog-${group.name.toLowerCase()}-title`}>{group.name}</h3>
+                </div>
+                <p>{group.description}</p>
+              </header>
+              <div className="catalog-grid">
+                {group.items.map((item, index) => (
+                  <article className={`catalog-card catalog-card-${index + 1}`} key={item.name}>
+                    <img src={item.image} alt={item.alt} loading="lazy" width={768} height={1024} />
+                    <div className="catalog-card-caption">
+                      <div><span>{item.note}</span><h4>{item.name}</h4></div>
+                      <ArrowUpRight aria-hidden="true" />
+                    </div>
+                  </article>
+                ))}
               </div>
-            </article>
+            </section>
           ))}
         </div>
       </section>
