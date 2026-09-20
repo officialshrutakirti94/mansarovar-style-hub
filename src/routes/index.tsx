@@ -55,7 +55,7 @@ const catalogGroups = [
     description: "From refined everyday staples to distinguished festive looks, find a wardrobe that feels unmistakably yours.",
     items: [
       { name: "Regal Kurta Sets", note: "Festive edit", image: menBlueAsset.url, alt: "Man wearing a blue kurta and patterned Nehru jacket in the Mansarovar store" },
-      { name: "Everyday Formals", note: "Shirts & trousers", image: menShirtsAsset.url, alt: "Colourful stacks of Monte Carlo shirts at Mansarovar" },
+      { name: "Fabrics", note: "All type fabrics", image: menShirtsAsset.url, alt: "Colourful stacks of fabrics at Mansarovar" },
       { name: "Celebration Ready", note: "Signature looks", image: menFestiveAsset.url, alt: "Man wearing a blue festive kurta outside the illuminated Mansarovar storefront" },
     ],
   },
@@ -232,14 +232,14 @@ function Index() {
           <p>Follow our latest arrivals or get in touch with the store.</p>
         </div>
         <div className="contact-details">
-          <a href="tel:" className="contact-row" aria-label="Phone number to be added">
+          <a href="tel:+917501538752" className="contact-row" aria-label="Call Mansarovar Readymade">
             <Phone aria-hidden="true" />
-            <span><small>Call us</small>[ADD NUMBER]</span>
+            <span><small>Call us</small>+91 75015 38752</span>
             <ArrowUpRight aria-hidden="true" />
           </a>
-          <a href="mailto:" className="contact-row" aria-label="Email address to be added">
+          <a href="mailto:mansarovar48@gmail.com" className="contact-row" aria-label="Email Mansarovar Readymade">
             <Mail aria-hidden="true" />
-            <span><small>Email us</small>[ADD EMAIL]</span>
+            <span><small>Email us</small>mansarovar48@gmail.com</span>
             <ArrowUpRight aria-hidden="true" />
           </a>
           <div className="contact-socials">
@@ -261,8 +261,8 @@ function Index() {
           <a href="#contact">Contact</a>
         </nav>
         <div className="footer-contact">
-          <p>[ADD NUMBER]</p>
-          <p>[ADD EMAIL]</p>
+          <p>+91 75015 38752</p>
+          <p>mansarovar48@gmail.com</p>
           <SocialLinks compact />
         </div>
         <p className="copyright">© 2026 Mansarovar Readymade. All rights reserved.</p>
