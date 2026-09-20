@@ -154,10 +154,10 @@
 
 @utility site-header {
   align-items: center;
-  background: color-mix(in oklab, var(--background) 90%, transparent);
-  border-bottom: 1px solid color-mix(in oklab, var(--border) 75%, transparent);
+  background: color-mix(in oklab, var(--background) 96%, transparent);
+  border-bottom: 0;
   display: flex;
-  height: 5.25rem;
+  height: 5.5rem;
   justify-content: space-between;
   left: 0;
   padding: 0 clamp(1.25rem, 5vw, 5rem);
@@ -171,42 +171,49 @@
 @utility brand-link {
   align-items: center;
   display: flex;
-  font-size: .77rem;
+  color: var(--primary);
+  font-size: .8rem;
   font-weight: 600;
-  gap: .75rem;
+  gap: .65rem;
+  letter-spacing: .18em;
   text-transform: uppercase;
 }
 
-@utility brand-logo { height: 3.55rem; width: 3.55rem; object-fit: contain; }
-@utility header-nav { display: flex; gap: clamp(1rem, 3vw, 2.5rem); font-size: .78rem; font-weight: 600; }
+@utility brand-logo { height: 3.3rem; width: 3.3rem; object-fit: contain; }
+@utility header-nav { align-items: center; display: flex; gap: clamp(1.25rem, 3.5vw, 3.4rem); font-size: .78rem; font-weight: 600; }
 @utility header-nav { & a { transition: color .2s ease; } & a:hover { color: var(--primary); } }
+@utility header-contact { align-items: center; border-bottom: 1px solid var(--primary); color: var(--primary); display: flex; gap: .65rem; padding: .7rem 0; }
+@utility header-contact { & svg { height: .9rem; width: .9rem; } }
 
 @utility hero-section {
-  align-items: flex-end;
-  display: flex;
-  min-height: min(54rem, 94vh);
+  align-items: center;
+  display: grid;
+  gap: clamp(2rem, 5vw, 6rem);
+  grid-template-columns: .94fr 1.06fr;
+  min-height: min(51rem, 100vh);
   overflow: hidden;
-  padding: 8rem clamp(1.25rem, 7vw, 7rem) clamp(3rem, 7vw, 6rem);
+  padding: 8.5rem clamp(1.25rem, 5.5vw, 5.5rem) 2.5rem;
   position: relative;
 }
 
-@utility hero-image { height: 100%; inset: 0; object-fit: cover; object-position: center; position: absolute; width: 100%; }
-@utility hero-shade { background: linear-gradient(90deg, oklch(0.12 0.03 30 / .93) 0%, oklch(0.16 0.03 35 / .7) 46%, oklch(0.15 0.02 35 / .2) 80%), linear-gradient(0deg, oklch(0.12 0.02 30 / .6), transparent 55%); inset: 0; position: absolute; }
-@utility hero-content { color: var(--primary-foreground); max-width: 43rem; position: relative; z-index: 2; }
-@utility hero-logo { background: color-mix(in oklab, var(--background) 96%, transparent); border-radius: 50%; height: 6.5rem; margin-bottom: 1.5rem; object-fit: contain; padding: .35rem; width: 6.5rem; }
+@utility hero-content { max-width: 39rem; padding-bottom: 1rem; position: relative; z-index: 2; }
 @utility eyebrow { font-size: .72rem; font-weight: 600; letter-spacing: .16em; margin: 0 0 1rem; text-transform: uppercase; }
-@utility hero-content { & h1 { font-family: var(--font-display); font-size: clamp(3.3rem, 7vw, 7.2rem); font-weight: 500; letter-spacing: 0; line-height: .91; margin: 0; } }
-@utility hero-copy { font-size: clamp(.95rem, 1.4vw, 1.12rem); line-height: 1.7; margin: 1.75rem 0 2rem; max-width: 36rem; }
-@utility primary-action { align-items: center; background: var(--primary); border: 1px solid var(--primary); color: var(--primary-foreground); display: inline-flex; font-size: .76rem; font-weight: 600; gap: 1rem; padding: 1rem 1.25rem; text-transform: uppercase; transition: background .2s ease, transform .2s ease; }
+@utility hero-content { & .eyebrow { color: var(--primary); display: flex; gap: .65rem; } & .eyebrow span { background: var(--accent); border-radius: 50%; height: .5rem; margin-top: .18rem; width: .5rem; } & h1 { font-family: var(--font-display); font-size: clamp(4.7rem, 8.1vw, 8rem); font-weight: 500; letter-spacing: 0; line-height: .82; margin: 2.1rem 0 0; } & h1 em { color: var(--primary); font-weight: 500; } }
+@utility hero-copy { color: var(--muted-foreground); font-size: clamp(.95rem, 1.25vw, 1.08rem); line-height: 1.7; margin: 2.6rem 0 2.35rem; max-width: 30rem; }
+@utility hero-actions { align-items: center; display: flex; gap: 2rem; }
+@utility primary-action { align-items: center; background: var(--primary); border: 1px solid var(--primary); box-shadow: .35rem .35rem 0 var(--secondary); color: var(--primary-foreground); display: inline-flex; font-size: .76rem; font-weight: 600; gap: 1.2rem; padding: 1.15rem 1.35rem; transition: background .2s ease, transform .2s ease; }
 @utility primary-action { & svg { height: 1rem; width: 1rem; } &:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-2px); } }
-@utility hero-footnote { bottom: 3rem; color: var(--primary-foreground); display: flex; font-size: .68rem; gap: 2rem; position: absolute; right: clamp(1.25rem, 5vw, 5rem); text-transform: uppercase; z-index: 2; }
-
-@utility fashion-line { border: 1px solid oklch(0.97 0.01 75 / .25); border-radius: 50%; position: absolute; z-index: 1; }
-@utility fashion-line-one { height: 24rem; right: -6rem; top: 18%; width: 24rem; animation: drift 9s ease-in-out infinite; }
-@utility fashion-line-two { height: 14rem; right: 12rem; top: 35%; width: 14rem; animation: drift 7s ease-in-out infinite reverse; }
-@utility floating-mark { color: oklch(0.97 0.01 75 / .65); position: absolute; z-index: 2; }
-@utility floating-shirt { height: 2.25rem; right: 12%; top: 27%; width: 2.25rem; animation: float 5s ease-in-out infinite; }
-@utility floating-spark { bottom: 22%; height: 1.5rem; right: 33%; width: 1.5rem; animation: float 4s ease-in-out infinite reverse; }
+@utility secondary-action { align-items: center; border-bottom: 1px solid var(--secondary); display: inline-flex; font-size: .76rem; font-weight: 600; gap: 1rem; padding: .7rem 0; }
+@utility secondary-action { & svg { height: 1rem; width: 1rem; } }
+@utility hero-visual { align-self: end; height: min(39rem, 74vh); margin: 0 auto; max-width: 40rem; position: relative; width: 100%; }
+@utility arch-shadow { background: var(--muted); border-radius: 18rem 18rem 0 0; bottom: -.8rem; height: calc(100% - 1.5rem); position: absolute; right: -1.35rem; width: calc(100% - 1.5rem); }
+@utility hero-arch { border-radius: 18rem 18rem 0 0; bottom: 0; height: calc(100% - 1.5rem); margin: 0; overflow: hidden; position: absolute; right: 0; width: calc(100% - 1.5rem); }
+@utility hero-image { height: 100%; object-fit: cover; object-position: center; width: 100%; }
+@utility hero-badge { align-items: center; background: var(--secondary); border-radius: 50%; color: var(--primary); display: flex; flex-direction: column; height: 9.3rem; justify-content: center; position: absolute; right: -1rem; text-align: center; top: 1rem; transform: rotate(5deg); width: 9.3rem; z-index: 3; box-shadow: .35rem .4rem 0 color-mix(in oklab, var(--primary) 13%, transparent); }
+@utility hero-badge { & span { font-family: var(--font-display); font-size: .85rem; font-style: italic; } & strong { font-size: 1.05rem; line-height: 1.05; } }
+@utility hero-spark { color: var(--secondary); font-size: 1.75rem; position: absolute; z-index: 4; }
+@utility hero-spark-one { left: -2.5rem; top: 3.5rem; }
+@utility hero-spark-two { bottom: .25rem; right: -1.6rem; }
 
 @utility collections-section { padding: clamp(5rem, 9vw, 9rem) clamp(1.25rem, 5vw, 5rem); }
 @utility section-heading { align-items: end; display: grid; gap: 2rem; grid-template-columns: 1fr minmax(15rem, 28rem); margin: 0 auto 3rem; max-width: 90rem; }
@@ -254,13 +261,16 @@
   .site-header { height: 4.5rem; }
   .brand-logo { height: 3rem; width: 3rem; }
   .header-nav { gap: .8rem; font-size: .67rem; }
-  .header-nav a:nth-child(2) { display: none; }
-  .hero-section { align-items: flex-end; min-height: 46rem; padding-top: 7rem; }
-  .hero-image { object-position: 57% center; }
-  .hero-shade { background: linear-gradient(0deg, oklch(0.12 0.03 30 / .94) 0%, oklch(0.14 0.03 30 / .5) 75%, oklch(0.12 0.02 30 / .3)); }
-  .hero-logo { height: 5rem; margin-bottom: 1rem; width: 5rem; }
-  .hero-footnote { display: none; }
-  .floating-shirt { right: 10%; top: 24%; }
+  .header-nav a:nth-child(2), .header-nav a:nth-child(3) { display: none; }
+  .header-contact { display: none !important; }
+  .hero-section { gap: 3rem; grid-template-columns: 1fr; min-height: auto; padding-bottom: 0; padding-top: 7.5rem; }
+  .hero-content h1 { font-size: clamp(4.2rem, 22vw, 6.5rem); }
+  .hero-content .eyebrow { margin-bottom: 1.75rem; }
+  .hero-actions { align-items: flex-start; flex-direction: column; gap: 1.25rem; }
+  .hero-visual { height: 29rem; width: calc(100% + 1rem); }
+  .hero-badge { height: 7.2rem; right: -.15rem; top: .5rem; width: 7.2rem; }
+  .hero-badge strong { font-size: .85rem; }
+  .hero-spark-one { left: -.75rem; }
   .section-heading, .about-section, .contact-section { grid-template-columns: 1fr; }
   .section-heading { gap: 1.25rem; }
   .collection-grid { grid-template-columns: 1fr; }
