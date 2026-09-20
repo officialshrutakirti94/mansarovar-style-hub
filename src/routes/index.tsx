@@ -7,11 +7,9 @@ import {
   Mail,
   Phone,
   Play,
-  Shirt,
-  Sparkles,
 } from "lucide-react";
 
-import storeAsset from "@/assets/mansarovar-store.jpg.asset.json";
+import storeAsset from "@/assets/mansarovar-storefront-2026.jpg.asset.json";
 import logoAsset from "@/assets/mansarovar-logo.png.asset.json";
 import mensCollection from "@/assets/mens-collection.jpg";
 import ladiesCollection from "@/assets/ladies-collection.jpg";
@@ -107,42 +105,46 @@ function Index() {
         </a>
         <nav aria-label="Main navigation" className="header-nav">
           <a href="#collections">Collections</a>
-          <a href="#about">Our Store</a>
-          <a href="#contact">Contact</a>
+          <a href="#about">Our story</a>
+          <a href="#contact">Visit us</a>
+          <a href="#contact" className="header-contact">Get in touch <ArrowUpRight aria-hidden="true" /></a>
         </nav>
       </header>
 
       <section id="top" className="hero-section" aria-labelledby="hero-title">
-        <img
-          src={storeAsset.url}
-          alt="The illuminated Mansarovar Readymade storefront in Raniganj"
-          className="hero-image"
-          width={1024}
-          height={768}
-          fetchPriority="high"
-        />
-        <div className="hero-shade" />
-        <div className="fashion-line fashion-line-one" aria-hidden="true" />
-        <div className="fashion-line fashion-line-two" aria-hidden="true" />
-        <Shirt className="floating-mark floating-shirt" aria-hidden="true" />
-        <Sparkles className="floating-mark floating-spark" aria-hidden="true" />
-
         <div className="hero-content">
-          <img src={logoAsset.url} alt="" className="hero-logo" aria-hidden="true" />
-          <p className="eyebrow">A family fashion destination</p>
-          <h1 id="hero-title">Style for everyone,<br />all in one place.</h1>
+          <p className="eyebrow"><span aria-hidden="true" /> Raniganj’s family fashion destination</p>
+          <h1 id="hero-title">Style for<br /><em>everyone.</em></h1>
           <p className="hero-copy">
-            Readymade clothing for men, women and kids—chosen for comfort,
-            confidence and every moment worth dressing for.
+            One warm, welcoming space for the whole family to find their next favourite look.
           </p>
-          <a href="#collections" className="primary-action">
-            Explore Collections <ArrowDown aria-hidden="true" />
-          </a>
+          <div className="hero-actions">
+            <a href="#collections" className="primary-action">
+              Explore collections <ArrowUpRight aria-hidden="true" />
+            </a>
+            <a href="#about" className="secondary-action">
+              Discover our story <ArrowDown aria-hidden="true" />
+            </a>
+          </div>
         </div>
 
-        <div className="hero-footnote" aria-hidden="true">
-          <span>Raniganj</span>
-          <span>Men · Women · Kids</span>
+        <div className="hero-visual">
+          <div className="arch-shadow" aria-hidden="true" />
+          <figure className="hero-arch">
+            <img
+              src={storeAsset.url}
+              alt="The illuminated Mansarovar Readymade storefront in Raniganj"
+              className="hero-image"
+              width={886}
+              height={710}
+              fetchPriority="high"
+            />
+          </figure>
+          <div className="hero-badge" aria-label="Wear what feels like you">
+            <span>Wear</span><strong>what<br />feels<br />like you.</strong>
+          </div>
+          <span className="hero-spark hero-spark-one" aria-hidden="true">✦</span>
+          <span className="hero-spark hero-spark-two" aria-hidden="true">✦</span>
         </div>
       </section>
 
