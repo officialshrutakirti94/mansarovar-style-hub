@@ -218,15 +218,20 @@
 @utility collections-section { padding: clamp(5rem, 9vw, 9rem) clamp(1.25rem, 5vw, 5rem); }
 @utility section-heading { align-items: end; display: grid; gap: 2rem; grid-template-columns: 1fr minmax(15rem, 28rem); margin: 0 auto 3rem; max-width: 90rem; }
 @utility section-heading { & h2 { font-family: var(--font-display); font-size: clamp(3rem, 6vw, 5.8rem); font-weight: 500; line-height: .95; margin: 0; } & > p { color: var(--muted-foreground); line-height: 1.7; margin: 0; } }
-@utility collection-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0 auto; max-width: 90rem; }
-@utility collection-card { aspect-ratio: .74; background: var(--muted); color: var(--primary-foreground); overflow: hidden; position: relative; }
-@utility collection-card { & > img { height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.2,.7,.2,1); width: 100%; } &:hover > img { transform: scale(1.035); } }
-@utility collection-overlay { background: linear-gradient(0deg, oklch(0.1 0.02 30 / .86), transparent 62%); inset: 0; position: absolute; }
-@utility collection-number { font-size: .7rem; left: 1.5rem; position: absolute; top: 1.5rem; }
-@utility collection-copy { bottom: 0; left: 0; padding: clamp(1.3rem, 3vw, 2.2rem); position: absolute; right: 0; }
-@utility collection-copy { & p { font-size: .67rem; margin: 0 0 .55rem; text-transform: uppercase; } & h3 { font-family: var(--font-display); font-size: clamp(2rem, 3vw, 3.1rem); font-weight: 500; margin: 0; } }
-@utility collection-link { align-items: center; border-top: 1px solid oklch(1 0 0 / .35); display: flex; font-size: .7rem; justify-content: space-between; margin-top: 1.2rem; padding-top: .9rem; text-transform: uppercase; }
-@utility collection-link { & svg { height: 1rem; width: 1rem; } }
+@utility catalog-jump { border-bottom: 1px solid var(--border); border-top: 1px solid var(--border); display: flex; gap: clamp(1.5rem, 5vw, 4rem); margin: 0 auto; max-width: 90rem; padding: 1rem 0; }
+@utility catalog-jump { & a { color: var(--muted-foreground); font-family: var(--font-display); font-size: 1.05rem; transition: color .2s ease; } & a:hover { color: var(--primary); } }
+@utility catalog-groups { margin: 0 auto; max-width: 90rem; }
+@utility catalog-group { padding: clamp(4rem, 7vw, 7rem) 0; scroll-margin-top: 2rem; }
+@utility catalog-group { & + & { border-top: 1px solid var(--border); } }
+@utility catalog-group-heading { align-items: start; display: grid; gap: 1.5rem; grid-template-columns: 3rem 1fr minmax(15rem, 28rem); margin-bottom: 2.5rem; }
+@utility catalog-group-heading { & > span { color: var(--primary); font-size: .7rem; padding-top: .6rem; } & div > p { color: var(--primary); font-size: .68rem; font-weight: 600; margin: 0 0 .5rem; text-transform: uppercase; } & h3 { font-family: var(--font-display); font-size: clamp(3.2rem, 6vw, 6rem); font-weight: 500; line-height: .86; margin: 0; } & > p { color: var(--muted-foreground); line-height: 1.7; margin: .25rem 0 0; } }
+@utility catalog-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@utility catalog-men { & .catalog-grid { grid-template-columns: 1.05fr .8fr 1.05fr; } & .catalog-card-2 { margin-top: 4rem; } }
+@utility catalog-card { background: var(--muted); overflow: hidden; position: relative; }
+@utility catalog-card { & > img { aspect-ratio: .77; display: block; height: auto; object-fit: cover; transition: transform .7s cubic-bezier(.2,.7,.2,1); width: 100%; } &:hover > img { transform: scale(1.025); } }
+@utility catalog-card-caption { align-items: end; background: var(--card); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; padding: 1rem .25rem 1.15rem; position: relative; }
+@utility catalog-card-caption { & span { color: var(--muted-foreground); display: block; font-size: .64rem; margin-bottom: .25rem; text-transform: uppercase; } & h4 { font-family: var(--font-display); font-size: clamp(1.35rem, 2vw, 1.9rem); font-weight: 500; margin: 0; } & svg { color: var(--primary); height: 1.1rem; margin-bottom: .35rem; transition: transform .2s ease; width: 1.1rem; } }
+@utility catalog-card { &:hover .catalog-card-caption svg { transform: translate(3px, -3px); } }
 
 @utility about-section { background: var(--foreground); color: var(--background); display: grid; grid-template-columns: .65fr 1fr; min-height: 41rem; overflow: hidden; padding: clamp(5rem, 9vw, 9rem) clamp(1.25rem, 7vw, 7rem); position: relative; }
 @utility about-mark { color: color-mix(in oklab, var(--primary) 78%, transparent); font-family: var(--font-display); font-size: clamp(19rem, 40vw, 39rem); font-weight: 600; left: -3rem; line-height: .7; opacity: .27; position: absolute; top: 12%; }
@@ -273,8 +278,12 @@
   .hero-spark-one { left: -.75rem; }
   .section-heading, .about-section, .contact-section { grid-template-columns: 1fr; }
   .section-heading { gap: 1.25rem; }
-  .collection-grid { grid-template-columns: 1fr; }
-  .collection-card { aspect-ratio: .82; }
+  .catalog-jump { justify-content: space-between; }
+  .catalog-group-heading { grid-template-columns: 2rem 1fr; }
+  .catalog-group-heading > p { grid-column: 2; }
+  .catalog-grid, .catalog-men .catalog-grid { grid-template-columns: 1fr; }
+  .catalog-men .catalog-card-2 { margin-top: 0; }
+  .catalog-card > img { aspect-ratio: .82; }
   .about-section { min-height: 44rem; }
   .about-kicker { align-self: start; }
   .about-mark { font-size: 25rem; top: 12%; }
